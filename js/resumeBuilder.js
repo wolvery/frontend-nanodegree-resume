@@ -19,15 +19,21 @@ var bio = {
 			HTMLheaderName.replace("%data%",bio.name));
 		$("#header").append(HTMLbioPic.replace("%data%",bio.biopic),
 			HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage));
-		$("#topContacts").prepend(HTMLlocation.replace("%data%",bio.location),
-			HTMLgithub.replace("%data%",bio.github),
+		$("#topContacts").prepend(HTMLlocation.replace("%data%",bio.contacts.location),
+			HTMLgithub.replace("%data%",bio.contacts.github),
 			HTMLemail.replace("%data%",bio.contacts.email),
 			HTMLmobile.replace("%data%",bio.contacts.mobile));
+		$("#footerContacts").prepend(HTMLlocation.replace("%data%",bio.contacts.location),
+			HTMLgithub.replace("%data%",bio.contacts.github),
+			HTMLemail.replace("%data%",bio.contacts.email),
+			HTMLmobile.replace("%data%",bio.contacts.mobile));
+
 		if (bio.skill.length > 0) {
 			$("#header").append(HTMLskillsStart);
 			bio.skill.forEach(function(element){
 				$("#skills").append(HTMLskills.replace("%data%",element));
 			});
+
 		}
 	}
 };
@@ -35,38 +41,48 @@ var bio = {
 var work = {
 	"jobs": [{
 		"employer": "VERIMAG",
+		"website" : "http://www-verimag.imag.fr/?lang=en",
 		"title": "Developer intenship",
 		"location": "Grenoble, France",
 		"descritpion" : "Internship to produce a simulation based approach to evaluate the energy consumptionof a Wireless Sensor Network.",
-		"dates": "Mar-Jul 2008"
+		"dates" : "Mar-Jul 2008",
+		"images" : ["images/VERIMAG.png"]
 	},
 	{
 		"employer": "ENACOM",
+		"website" : "http://www.enacom.com.br/",
 		"title": "Developer intenship",
 		"location": "Belo Horizonte, Brazil",
-		"descritpion" : "Provided software to embedded systems. Developed WEB applications and implementa-tion of systems. Elaboration and execution of test scenarios.",
-		"dates": "Mar 2014 - Jun 2015"
+		"descritpion" : "Being part of a notorius team as an Internship with the goal of learning as much as possible! Provided software to embedded systems as Arduino, BeagleBone and Raspberry Pi. Developed WEB applications and implementation of systems. Elaboration and execution of test scenarios. ",
+		"dates": "Mar 2014 - Jun 2015",
+		"images":["images/Poupapark.png","images/enacom-logo.jpg"]
 	},
 	{
 		"employer": "BWTECH",
+		"website" : "http://www.bwtech.com/",
 		"title": "Developer intenship",
 		"location": "Belo Horizonte, Brazil",
 		"descritpion" : "Developed new back-end features. Mostly were developed in .net",
-		"dates": "Jun-Dec 2015"
+		"dates": "Jun-Dec 2015",
+		"images" : ["images/BWTECH-logo.jpg"]
 	},
 	{
 		"employer": "BWTECH",
+		"website" : "http://www.bwtech.com/",
 		"title": "Backend Developer",
 		"location": "Belo Horizonte, Brazil",
 		"descritpion" : "Developed new back-end features. Mostly were developed in .net",
-		"dates": "Jan 2016 - Jun 2017"
+		"dates": "Jan 2016 - Jun 2017",
+		"images" : ["images/BWTECH-logo.jpg"]
 	}
 	],
 	"display" : function(){
 		if (work.jobs.length > 0) {
+
 			work.jobs.forEach(function(element){
 				$("#workExperience").append(HTMLworkStart);
-				$(".work-entry:last").append(HTMLworkEmployer.replace("%data%",element.employer),
+
+				$(".work-entry:last").append(HTMLworkEmployer.replace("%data%",element.employer).replace("#",element.website) +
 					HTMLworkTitle.replace("%data%",element.title),
 					HTMLworkDates.replace("%data%",element.dates),
 					HTMLworkLocation.replace("%data%",element.location),
@@ -78,36 +94,110 @@ var work = {
 
 var project = {
 	"projects": [{
-		"title":"Resumee",
-		"date" : 2016,
-		"descritpion" : "Professional resumee",
-		"image" : "images/fry.jpg"
+		"title":"Implementation of IPv6 Gateway in a 6LoWPAN Network",
+		"date" : 2015,
+		"descritpion" : "Bachelor’s thesis to degree in Computer Engineering which consists of a implementation "+
+		"of a 6LoWPAN Wireless Sensor's Network sending data to a IPv6 Gateway. "+
+		"The Wireless sensors were Arduinos which monitored iluminity," +
+		" temperature and humidity at some location. "+
+		"A website available at a Raspberry exhibit these data collected from the wireless network. Technologies used : C++,C, NodeJs, MongoDB.",
+		"githubPage" : "https://github.com/wolvery/WSN",
+		"images" : ["images/web.JPG"]
 	}
 	],
 	"display" : function(){
 		project.projects.forEach(function(element){
 			$("#projects").append(HTMLprojectStart);
-			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%",element.title),
+
+			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%",element.title).replace("#",element.githubPage),
 				HTMLprojectDates.replace("%data%",element.date),
-				HTMLprojectDescription.replace("%data%",element.descritpion),
-				HTMLprojectImage.replace("%data%",element.image) );
+				HTMLprojectDescription.replace("%data%",element.descritpion) );
+			element.images.forEach(function(image){
+				$(".project-entry:last").append(HTMLprojectImage.replace("%data%",image));
+				console.log(image);
+			});
+
 		});
 	}
 };
 
 var education ={
-	"schools" : [{
+	"schools" : [
+	{
 		"name" : "CEFET",
 		"location" : "Belo Horizonte, Brazil",
-		"degreDate" : 2015
-	}],
-	"onlineCourses": [{"title":"Front-End Developer", "school":"Udacity","dates":"Dec 2016 - Current","url" : "udacity.com"}]
+		"date" : 2015,
+		"degree" : "Barchelor of Computer Engineering",
+		"major" : "Software Development"
+	},
+	{
+		"name" : "IUT-1",
+		"location" : "Grenoble, France",
+		"date" : 2013,
+		"degree" : "Professional Bachelor's Degree in Computer Networks & Telecommunications specialising in Wireless Networks and Security",
+		"major" : "Wireless Networks and Security"
+	}
+	],
+	"onlineCourses": [
+	{
+		"title":"Front-End Developer",
+		"school":"Udacity",
+		"dates":"Dec 2016 - Current",
+		"url" : "https://udacity.com"
+	},
+	{
+		"title":"MongoDB for Node.js Developers",
+		"school":"MongoDB University",
+		"dates":"Dec 2014",
+		"url" : "https://university.mongodb.com/courses/M101JS/about"
+	},
+	{
+		"title":"MongoDB for DBAs",
+		"school":"MongoDB University",
+		"dates":"Dec 2015",
+		"url" : "https://university.mongodb.com/courses/M102/about"
+	},
+	{
+		"title":"HTML/CSS",
+		"school":"Codeschool",
+		"dates":"Jun 2014",
+		"url" : "https://www.codeschool.com/"
+	},
+	{
+		"title":"JavaScript",
+		"school":"Codeschool",
+		"dates":"Aug 2014",
+		"url" : "https://www.codeschool.com/"
+	}
+	],
+	"display" : function(){
+		education.schools.forEach(function(element){
+			$("#education").append(HTMLschoolStart);
+
+			$(".education-entry:last").append(HTMLschoolName.replace("%data%",element.name) +
+				HTMLschoolDegree.replace("%data%",element.degree),
+				HTMLschoolDates.replace("%data%",element.date),
+				HTMLschoolLocation.replace("%data%",element.location),
+				HTMLschoolMajor.replace("%data%",element.major) );
+
+		});
+		$("#education").append(HTMLonlineClasses);
+
+		education.onlineCourses.forEach(function(element){
+			$("#education h3").append(HTMLonlineTitle.replace("%data%",element.title).replace("#",element.url) +
+				HTMLonlineSchool.replace("%data%",element.school)+
+				HTMLonlineDates.replace("%data%",element.dates)+
+				"<br>" );
+
+		});
+	}
+
 
 };
 
 
-$("#main").prepend(internationalizeButton);
-$("#mapDiv").prepend(googleMap);
+//$("#main").prepend(internationalizeButton);
+$("#mapDiv").append(googleMap);
 
 bio.display();
 work.display();
@@ -125,5 +215,3 @@ function inName(oldName) {
     // Don't delete this line!
     return finalName;
 }
-
-project.display();
