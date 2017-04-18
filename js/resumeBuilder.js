@@ -3,7 +3,7 @@ This is empty on purpose! Your code to build the resume will go here.
 */
 var bio = {
 	"name" : "Guilherme da Silva",
-	"role" : "Web/Backend Developer",
+	"role" : "Front-End/Back-end Developer",
 	"contacts" :
 	{
 		"email" : "guisigo@gmail.com",
