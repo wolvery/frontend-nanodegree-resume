@@ -12,6 +12,8 @@ h6 {
   padding: 0;
   margin: 0;
   font-family: 'Playfair Display',"Roboto", sans-serif;
+
+
 }
 
 .clear-fix {
@@ -22,6 +24,14 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+}
+
+.bubbleChart {
+  width: 800px;
+  height: 500px;
+  padding-left: 40px;
+  padding-top: 40px;
+  display: flex;
 }
 
 h1 {
@@ -37,6 +47,7 @@ h2 {
   color: #999;
   line-height: 29px;
   padding: 10px;
+  text-align: center;
 }
 
 h3 {
@@ -71,6 +82,10 @@ h5 {
   color: #999;
   line-height: 16px;
   float: left;
+}
+
+.date-projects {
+  float: none;
 }
 
 .location-text {
@@ -139,6 +154,9 @@ a {
 #header {
   height: 100vh;
   background-image: url(../images/Navy-blue-wallpapers-HD.jpg);
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .flex-box {
@@ -173,12 +191,30 @@ ul {
   border-radius :  50%;
 }
 
+.text-modal {
+  color: white;
+}
+
 .responsive-img {
   width:  50vw;
 }
 
+#workExperience,
+#education
+{
+  padding: 100px;
+}
+
+#projects{
+  clear: both;
+  display: block;
+  padding: 100px;
+  text-align: center;
+  float: none;
+}
+
 img {
-  padding: 10px;
+  padding: 30px;
 }
 
 span {
@@ -205,21 +241,78 @@ span {
 
 @media (max-width: 770px){
   #header{
+    height: 110vh;
     background-position: -600px;
   }
+}
+
+@media (max-width: 440px) {
+  #name {
+    font-size: 32px;
+  }
+
+  #workExperience,
+  #projects,
+  #education
+  {
+    padding: 20px;
+  }
+
+  .bubbleChart {
+    width: 269px;
+    height: 422px;
+    margin-left: 27px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+}
+
+@media (min-width: 441px) and (max-width: 790px){
+  .bubbleChart {
+    width: 400px;
+    height: 458px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-top: 55px;
+  }
+}
+
+@media (min-width: 791px) and (max-width: 1099px){
+  .bubbleChart {
+    width: 458px;
+    height: 458px;
+    margin-left: 20px;
+    padding-top: 0px;
+
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1250px){
+  .bubbleChart {
+    margin-left: 81px;
+    margin-top: -160px;
+  }
+
 }
 
 @media only screen and (max-width: 750px) {
   #name {
     margin-left: 3vw;
   }
+
   #lets-connect {
     margin-top: 10%;
   }
+
   .biopic {
     width: 150px;
   }
+
   .welcome-message {
+    display: none;
+  }
+
+  .responsive-img {
     display: none;
   }
 }
@@ -240,5 +333,11 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+}
+
+@media only screen and (max-height: 600px){
+  .bubbleChart{
+    margin-top: -80px;
   }
 }

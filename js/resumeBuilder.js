@@ -15,26 +15,41 @@ var bio = {
 	"biopic" : "images/perfil.jpg",
 	"skill" : ["VB.NET", "C++", "C", "CSS3", "HTML5", "Javascript","Java"],
 	"display" : function(){
-		$("#header").prepend(HTMLheaderRole.replace("%data%",bio.role),
+
+
+
+		$("#topContacts").append(HTMLlocation.replace("%data%",bio.contacts.location),
+			HTMLgithub.replace("%data%",bio.contacts.github),
+			HTMLemail.replace("%data%",bio.contacts.email),
+			HTMLmobile.replace("%data%",bio.contacts.mobile));
+
+
+
+		$("#header").prepend(internationalizeButton,	HTMLheaderRole.replace("%data%",bio.role),
 			HTMLheaderName.replace("%data%",bio.name));
+
 		$("#header").append(HTMLbioPic.replace("%data%",bio.biopic),
 			HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage));
-		$("#topContacts").prepend(HTMLlocation.replace("%data%",bio.contacts.location),
-			HTMLgithub.replace("%data%",bio.contacts.github),
-			HTMLemail.replace("%data%",bio.contacts.email),
-			HTMLmobile.replace("%data%",bio.contacts.mobile));
-		$("#footerContacts").prepend(HTMLlocation.replace("%data%",bio.contacts.location),
+
+		//if (bio.skill.length > 0) {
+		//	$("#header").append(HTMLskillsStart);
+		//	bio.skill.forEach(function(element){
+		//		$("#skills").append(HTMLskills.replace("%data%",element));
+		//	});
+
+		//}
+
+		$("#header").append(HTMLD3);
+
+		$("#footerContacts").append(HTMLlocation.replace("%data%",bio.contacts.location),
 			HTMLgithub.replace("%data%",bio.contacts.github),
 			HTMLemail.replace("%data%",bio.contacts.email),
 			HTMLmobile.replace("%data%",bio.contacts.mobile));
 
-		if (bio.skill.length > 0) {
-			$("#header").append(HTMLskillsStart);
-			bio.skill.forEach(function(element){
-				$("#skills").append(HTMLskills.replace("%data%",element));
-			});
 
-		}
+
+
+
 	}
 };
 
@@ -74,6 +89,15 @@ var work = {
 		"descritpion" : "Developed new back-end features. Mostly were developed in .net",
 		"dates": "Jan 2016 - Jun 2017",
 		"images" : ["images/BWTECH-logo.jpg"]
+	},
+	{
+		"employer": "SAN CORP",
+		"website" : "",
+		"title": "CIO",
+		"location": "Belo Horizonte, Brazil",
+		"descritpion" : "A software vendor. Mainly customer is BWTECH.",
+		"dates": "Jan 2016 - Actual",
+		"images" : [""]
 	}
 	],
 	"display" : function(){
@@ -94,8 +118,14 @@ var work = {
 
 var project = {
 	"projects": [{
+		"title":"Poupapark website development",
+		"date" : "2014 - 2015",
+		"descritpion" : "Development of the website as the main developer. Technology used was AngularJs.",
+		"githubPage" : "http://www.poupapark.com.br/",
+		"images" : ["images/poupapark.png"]
+	},{
 		"title":"Implementation of IPv6 Gateway in a 6LoWPAN Network",
-		"date" : 2015,
+		"date" : "2014 - 2015",
 		"descritpion" : "Bachelor’s thesis to degree in Computer Engineering which consists of a implementation "+
 		"of a 6LoWPAN Wireless Sensor's Network sending data to a IPv6 Gateway. "+
 		"The Wireless sensors were Arduinos which monitored iluminity," +
@@ -104,6 +134,7 @@ var project = {
 		"githubPage" : "https://github.com/wolvery/WSN",
 		"images" : ["images/web.JPG"]
 	}
+
 	],
 	"display" : function(){
 		project.projects.forEach(function(element){
@@ -112,10 +143,12 @@ var project = {
 			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%",element.title).replace("#",element.githubPage),
 				HTMLprojectDates.replace("%data%",element.date),
 				HTMLprojectDescription.replace("%data%",element.descritpion) );
-			element.images.forEach(function(image){
-				$(".project-entry:last").append(HTMLprojectImage.replace("%data%",image));
-				console.log(image);
-			});
+			if (element.images.length > 0){
+				element.images.forEach(function(image){
+					$(".project-entry:last").append(HTMLprojectImage.replace("%data%",image));
+					console.log(image);
+				});
+			}
 
 		});
 	}

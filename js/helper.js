@@ -17,11 +17,13 @@ var HTMLheaderRole = '<span>%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="green-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><i class="icon-phone-sign  icon-light"></i> <span class="green-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><i class="icon-envelope-alt  icon-light"></i><span class="green-text">email</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><a href="mailto:guisigo@gmail.com" class="icon-envelope-alt  icon-light"></a><span class="green-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="green-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><i class="icon-github  icon-light"></i><span class="green-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><a href="https://github.com/wolvery/" class="icon-github  icon-light"></a><span class="green-text">github</span><span class="white-text">%data%</span></li>';
 var HTMLblog = '<li class="flex-item"><span class="green-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><i class=" icon-pushpin  icon-light"></i><span class="green-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLD3 = '<div class="bubbleChart"/>';
+var divModal ='<div class="ui basic modal"><div class="ui icon header"><i class="archive icon"></i>%title%</div><div class="content"><p class="text-modal">%content%</p></div><div class="actions"><div class="ui green ok inverted button"><i class="checkmark icon"></i>Right!</div></div></div>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
@@ -38,7 +40,7 @@ var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
+var HTMLprojectDates = '<div class="date-text date-projects">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectPage = '<a href="#">%data%</a>';
 var HTMLprojectImage = '<img src="%data%" class="responsive-img">';
@@ -56,7 +58,7 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<button class="ui inverted green button">Up!</button>';
 var googleMap = '<div id="map"></div>';
 
 
