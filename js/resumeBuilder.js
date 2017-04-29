@@ -13,12 +13,12 @@ var bio = {
 	},
 	"welcomeMessage" : "Hello! Nice to see you arround! I am looking to develop something really nice arround here!",
 	"biopic" : "images/perfil.jpg",
-	"skill" : ["VB.NET", "C++", "C", "CSS3", "HTML5", "Javascript","Java"],
+	"skills" : ["VB.NET", "C++", "C", "CSS3", "HTML5", "Javascript","Java"],
 	"display" : function(){
 
 
 
-		$("#topContacts").append(HTMLlocation.replace("%data%",bio.contacts.location),
+		$("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%",bio.contacts.location),
 			HTMLgithub.replace("%data%",bio.contacts.github),
 			HTMLemail.replace("%data%",bio.contacts.email),
 			HTMLmobile.replace("%data%",bio.contacts.mobile));
@@ -40,15 +40,6 @@ var bio = {
 		//}
 
 		$("#header").append(HTMLD3);
-
-		$("#footerContacts").append(HTMLlocation.replace("%data%",bio.contacts.location),
-			HTMLgithub.replace("%data%",bio.contacts.github),
-			HTMLemail.replace("%data%",bio.contacts.email),
-			HTMLmobile.replace("%data%",bio.contacts.mobile));
-
-
-
-
 
 	}
 };
@@ -116,16 +107,16 @@ var work = {
 	}
 };
 
-var project = {
+var projects = {
 	"projects": [{
 		"title":"Poupapark website development",
-		"date" : "2014 - 2015",
+		"dates" : "2014 - 2015",
 		"descritpion" : "Development of the website as the main developer. Technology used was AngularJs.",
 		"githubPage" : "http://www.poupapark.com.br/",
 		"images" : ["images/poupapark.png"]
 	},{
 		"title":"Implementation of IPv6 Gateway in a 6LoWPAN Network",
-		"date" : "2014 - 2015",
+		"dates" : "2014 - 2015",
 		"descritpion" : "Bachelor’s thesis to degree in Computer Engineering which consists of a implementation "+
 		"of a 6LoWPAN Wireless Sensor's Network sending data to a IPv6 Gateway. "+
 		"The Wireless sensors were Arduinos which monitored iluminity," +
@@ -137,11 +128,11 @@ var project = {
 
 	],
 	"display" : function(){
-		project.projects.forEach(function(element){
+		projects.projects.forEach(function(element){
 			$("#projects").append(HTMLprojectStart);
 
 			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%",element.title).replace("#",element.githubPage),
-				HTMLprojectDates.replace("%data%",element.date),
+				HTMLprojectDates.replace("%data%",element.dates),
 				HTMLprojectDescription.replace("%data%",element.descritpion) );
 			if (element.images.length > 0){
 				element.images.forEach(function(image){
@@ -159,16 +150,16 @@ var education ={
 	{
 		"name" : "CEFET",
 		"location" : "Belo Horizonte, Brazil",
-		"date" : 2015,
+		"dates" : "2009 - 2015",
 		"degree" : "Barchelor of Computer Engineering",
-		"major" : "Software Development"
+		"majors" : ["Software Development"]
 	},
 	{
 		"name" : "IUT-1",
 		"location" : "Grenoble, France",
-		"date" : 2013,
+		"dates" : "2013 - 2014",
 		"degree" : "Professional Bachelor's Degree in Computer Networks & Telecommunications specialising in Wireless Networks and Security",
-		"major" : "Wireless Networks and Security"
+		"majors" : ["Wireless Networks and Security"]
 	}
 	],
 	"onlineCourses": [
@@ -209,9 +200,11 @@ var education ={
 
 			$(".education-entry:last").append(HTMLschoolName.replace("%data%",element.name) +
 				HTMLschoolDegree.replace("%data%",element.degree),
-				HTMLschoolDates.replace("%data%",element.date),
-				HTMLschoolLocation.replace("%data%",element.location),
-				HTMLschoolMajor.replace("%data%",element.major) );
+				HTMLschoolDates.replace("%data%",element.dates),
+				HTMLschoolLocation.replace("%data%",element.location));
+			element.majors.forEach(function	(major){
+				$(".education-entry:last").append(HTMLschoolMajor.replace("%data%",major));
+			});
 
 		});
 		$("#education").append(HTMLonlineClasses);
@@ -234,7 +227,7 @@ $("#mapDiv").append(googleMap);
 
 bio.display();
 work.display();
-project.display();
+projects.display();
 education.display();
 
 function inName(oldName) {
