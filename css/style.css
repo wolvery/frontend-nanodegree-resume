@@ -9,335 +9,336 @@ h3,
 h4,
 h5,
 h6 {
-  padding: 0;
-  margin: 0;
-  font-family: 'Playfair Display',"Roboto", sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: 'Playfair Display',"Roboto", sans-serif;
 
 
 }
 
 .clear-fix {
-  overflow: auto;
+	overflow: auto;
 }
 
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+	padding: 0 5%;
 }
 
 .bubbleChart {
-  width: 800px;
-  height: 500px;
-  padding-left: 40px;
-  padding-top: 40px;
-  display: flex;
+	width: 800px;
+	height: 500px;
+	padding-left: 40px;
+	padding-top: 40px;
+	display: flex;
 }
 
 h1 {
-  font-size: 40px;
-  color: #00D646;
-  line-height: 48px;
-  display: inline;
+	font-size: 40px;
+	color: #00D646;
+	line-height: 48px;
+	display: inline;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
-  text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+	color: #999;
+	line-height: 29px;
+	padding: 10px;
+	text-align: center;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+	font-style: italic;
+	font-size: 20px;
+	color: #000;
+	line-height: 22px;
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #4a4a4a;
+	line-height: 17px;
 }
 
 h2,
 h3,
 h4,
 h5 {
-  padding: 10px 5%;
+	padding: 10px 5%;
 
 }
 
 #name {
-  margin-left: 33vw;
+	margin-left: 33vw;
 }
 
 .date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
+	font-style: italic;
+	font-size: 14px;
+	color: #999;
+	line-height: 16px;
+	float: left;
 }
 
 .date-projects {
-  float: none;
+	float: none;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
+	font-style: italic;
+	font-size: 14px;
+	color: #999;
+	line-height: 16px;
+	float: right;
 
 }
 
 p {
-  font-size: 14px;
-  color: black;
-  line-height: 21px;
+	font-size: 14px;
+	color: black;
+	line-height: 21px;
 }
 
 span {
-  color:  white;
+	color:  white;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+	color: #1199c3;
+	text-decoration: none;
+	margin-top: 10px;
+	display: block;
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+	font-style: italic;
+	font-size: 18px;
+	color: #f3f3f3;
+	line-height: 28px;
 }
 
 #skills-h3 {
-  color: #15b149;
-  display: none;
+	color: #15b149;
+	display: none;
 }
 
 .green {
-  background-color: #005A1D;
+	background-color: #005A1D;
 }
 
 .green-text {
-  color: rgb(80, 249, 135);
+	color: rgb(80, 249, 135);
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+	font-weight: bold;
+	color: #fff;
 }
 
 .gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear: both;
-  display: block;
+	background-color: #f3f3f3;
+	padding-bottom: 10px;
+	clear: both;
+	display: block;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+	background-color: #4a4a4a;
 }
 
 /* TODO: Replace with image later */
 #header {
-  height: 100vh;
-  background-image: url(../images/Navy-blue-wallpapers-HD.jpg);
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+	height: 120vh;
+	background-image: url(../images/Navy-blue-wallpapers-HD.jpg);
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position-x: -100px;
 }
 
 .flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	padding: 10px;
 }
 
 .center-content {
-  padding: 2.5% 5%;
+	padding: 2.5% 5%;
 }
 
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
-  border-radius :  50%;
+	float: left;
+	padding: 10px;
+	width: 200px;
+	display: none;
+	border-radius :  50%;
 }
 
 .text-modal {
-  color: white;
+	color: white;
 }
 
 .responsive-img {
-  width:  50vw;
+	width:  50vw;
 }
 
 #workExperience,
 #education
 {
-  padding: 100px;
+	padding: 100px;
 }
 
 #projects{
-  clear: both;
-  display: block;
-  padding: 100px;
-  text-align: center;
-  float: none;
+	clear: both;
+	display: block;
+	padding: 100px;
+	text-align: center;
+	float: none;
 }
 
 img {
-  padding: 30px;
+	padding: 30px;
 }
 
 span {
-  padding: 5px;
+	padding: 5px;
 }
 
 #lets-connect {
-  text-align: center;
+	text-align: center;
 }
 
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
+	#lets-connect {
+		margin-top: 5%;
+	}
 }
 
 @media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+	.biopic {
+		width: 175px;
+	}
 }
 
 @media (max-width: 770px){
-  #header{
-    height: 110vh;
-    background-position: -600px;
-  }
+	#header{
+		height: 110vh;
+		background-position: -600px;
+	}
 }
 
 @media (max-width: 440px) {
-  #name {
-    font-size: 32px;
-  }
+	#name {
+		font-size: 32px;
+	}
 
-  #workExperience,
-  #projects,
-  #education
-  {
-    padding: 20px;
-  }
+	#workExperience,
+	#projects,
+	#education
+	{
+		padding: 20px;
+	}
 
-  .bubbleChart {
-    width: 269px;
-    height: 422px;
-    margin-left: 27px;
-    padding-left: 0px;
-    padding-top: 0px;
-  }
+	.bubbleChart {
+		width: 269px;
+		height: 422px;
+		margin-left: 27px;
+		padding-left: 0px;
+		padding-top: 0px;
+	}
 }
 
 @media (min-width: 441px) and (max-width: 790px){
-  .bubbleChart {
-    width: 400px;
-    height: 458px;
-    padding-left: 0px;
-    padding-top: 0px;
-    margin-top: 55px;
-  }
+	.bubbleChart {
+		width: 400px;
+		height: 458px;
+		padding-left: 0px;
+		padding-top: 0px;
+		margin-top: 55px;
+	}
 }
 
 @media (min-width: 791px) and (max-width: 1099px){
-  .bubbleChart {
-    width: 458px;
-    height: 458px;
-    margin-left: 20px;
-    padding-top: 0px;
+	.bubbleChart {
+		width: 458px;
+		height: 458px;
+		margin-left: 20px;
+		padding-top: 0px;
 
-  }
+	}
 }
 
 @media (min-width: 1100px) and (max-width: 1250px){
-  .bubbleChart {
-    margin-left: 81px;
-    margin-top: -160px;
-  }
+	.bubbleChart {
+		margin-left: 81px;
+		margin-top: -160px;
+	}
 
 }
 
 @media only screen and (max-width: 750px) {
-  #name {
-    margin-left: 3vw;
-  }
+	#name {
+		margin-left: 3vw;
+	}
 
-  #lets-connect {
-    margin-top: 10%;
-  }
+	#lets-connect {
+		margin-top: 10%;
+	}
 
-  .biopic {
-    width: 150px;
-  }
+	.biopic {
+		width: 150px;
+	}
 
-  .welcome-message {
-    display: none;
-  }
+	.welcome-message {
+		display: none;
+	}
 
-  .responsive-img {
-    display: none;
-  }
+	.responsive-img {
+		display: none;
+	}
 }
 
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
+	display: block;
+	height: 100%;
+	margin: 0 5%;
 }
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+	height: 400px;
+	width: 100%;
+	padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
-  }
+	#skills-h3,
+	.biopic {
+		display: block;
+	}
 }
 
 @media only screen and (max-height: 600px){
-  .bubbleChart{
-    margin-top: -80px;
-  }
+	.bubbleChart{
+		margin-top: -80px;
+	}
 }
