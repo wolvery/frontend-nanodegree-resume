@@ -203,15 +203,19 @@ ul {
 #workExperience,
 #education
 {
-	padding: 100px;
+	padding: 200px;
 }
 
 #projects{
 	clear: both;
 	display: block;
-	padding: 100px;
+	padding: 100px 300px;
 	text-align: center;
 	float: none;
+}
+
+.online-entry{
+	padding: 0 5%;
 }
 
 img {

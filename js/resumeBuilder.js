@@ -210,7 +210,7 @@ var education ={
 		$("#education").append(HTMLonlineClasses);
 
 		education.onlineCourses.forEach(function(element){
-			$("#education h3").append(HTMLonlineTitle.replace("%data%",element.title).replace("#",element.url) +
+			$(".online-header").append(HTMLonlineTitle.replace("%data%",element.title).replace("#",element.url) +
 				HTMLonlineSchool.replace("%data%",element.school)+
 				HTMLonlineDates.replace("%data%",element.dates)+
 				"<br>" );
