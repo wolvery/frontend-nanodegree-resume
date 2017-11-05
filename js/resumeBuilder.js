@@ -166,7 +166,7 @@ var education ={
 	{
 		"title":"Front-End Developer",
 		"school":"Udacity",
-		"dates":"Dec 2016 - Current",
+		"dates":"Dec 2016 - Aug 2017",
 		"url" : "https://udacity.com"
 	},
 	{
